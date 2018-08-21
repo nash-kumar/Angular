@@ -8,13 +8,15 @@ import { routes } from './app.router';
 import { Register1Component } from './register1/register1.component';
 import { StorageServiceModule } from 'angular-webstorage-service';
 import { AuthServiceService } from './services/auth.service.service';
+import { SimpleComponent } from './simple/simple.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HerocomponentComponent,
-    Register1Component
+    Register1Component,
+    SimpleComponent
 
   ],
   imports: [

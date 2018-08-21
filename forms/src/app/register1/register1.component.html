@@ -21,10 +21,18 @@
               required>
             <span class="help-block" *ngIf="PermanentAddress.invalid && PermanentAddress.touched">Enter address</span>
           </div>
+          <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                  <label><input type="checkbox" name="remember" [(ngModel)]="hero.remember"> Remember me</label>
+                </div>
+              </div>
+            </div>
           <div id="id">
             <div class="btn-group">
-              <button class="bbtn btn-success btn-lg " (click)="navigateReg(employeeform.value)">Previous Page</button>&nbsp;&nbsp;
-              <button class="bbtn btn-success btn-lg " (click)="navigateReg()">Submit</button></div>
+              <button class="bbtn btn-success btn-lg " (click)="navigateReg(employeeform.value)">Add Data</button>&nbsp;&nbsp;
+              <button class="bbtn btn-success btn-lg " (click)="navigateReq(employeeform.value)" hidden >Submit</button></div>
+              
           </div>
         </form>
       </div>

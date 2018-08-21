@@ -11,11 +11,13 @@ import { AuthServiceService } from '../services/auth.service.service';
 })
 export class HerocomponentComponent implements OnInit {
   hero:Hero;
+
+  // country = ['America', 'Australia', 'Belgium', 'Canada', 'India']
   
   constructor(private nash:Router,private abc:AuthServiceService) { }
   navigateReq(value){
     this.abc.setFormData(value);
-    this.nash.navigate(['register1']);
+    this.nash.navigate(['simple']);
   }
 name;
   

@@ -43,24 +43,24 @@
           <div class="form-group">
             <label for="select-inline">Country&nbsp;&nbsp;</label>
             <select name="select" value="select" [(ngModel)]="hero.select">
-              <option>America</option>
+              <option>America</option> 
               <option>Australia</option>
               <option>India</option>
               <option>Italy</option>
               <option>Spain</option>
             </select>
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox" >
-                  <label><input type="checkbox" name="remember" [(ngModel)]="hero.remember"> Remember me</label>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
         <div id="id">
-          <button class="btn btn-success btn-lg" (click)="navigateReq(employeeform.value)" [disabled]="employeeform.invalid">NextPage</button>
+          <button class="btn btn-success btn-lg" data-toggle="collapse" data-target="#demo" [disabled]="employeeform.invalid">Additional Information</button>
+          <div id="demo" class="collapse">
+            <br>
+            <div>
+              <app-register1></app-register1>
+              <p></p>
+              &nbsp; &nbsp; &nbsp;<button class="btn btn-success btn-lg " (click)="navigateReq(employeeform.value)">Next </button>
+            </div>
+          </div>
         </div>
       </form>
     </div>
