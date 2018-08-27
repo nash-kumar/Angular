@@ -1,0 +1,41 @@
+show dbs 	//(to show db list)
+use db_name 	//(to switch to db)
+show collections 	//(to disply list of dbs)
+
+INSERT
+
+db.createCollection('collection_name') 	//(to create new collection
+db.collection_name.insert({field_name: value, ...}) 	//(to insert one doc to c)
+db.c_name.insert([{field_name: value,..}, {field_name: value,.}]) //(to insert mult doc to c)
+
+DISPLAY
+
+db.c_name.find() 	//(to display doc in c)
+db.c_name.find().pretty() 	//(disp in arranged json formatt)
+db.c_name.find({field_name: value}) //to display particular doc
+db.c_name.find({$or:[{field_name: value}, {field_name: value}]}) 
+db.c_name.find({age: {$lt: 40}})
+db.c_name.find({"field_name.Sub_field_name": value})
+db.c_name.find().sort({field_name: 1}); //Sort in Ascending order
+db.c_name.find().sort({field_name: -1}); //Sort in Descending order
+db.c_name.find().count(); //returns number of doc
+db.c_name.find(field_name: value).count(); //returns num of doc which contains to given field & value
+db.c_name.find().limit(4); //returns 1st 4 doc
+db.c_name.find().forEach(function(doc){print("Customer_name:"+doc.field_name)}) //to display customized data
+
+
+
+UPDATE
+
+db.c_name.update({field_name: value}, {//(field to be update) field_name: value}) 	//overwrites the existing document
+db.c_name.update({field_name: value}, {$set:{field_name: value}}) 	//(update without overwritting)
+db.c_name.update({field_name: value}, {$inc:{field_name: value}}) //(inc a field
+db.c_name.update({field_name: value}, {$unset:{field_name: value}}) //(remove a field)
+db.c_name.update({field_name: value}, {{field_name: value}, {upsert: true}}) //(checks c if not found adds new c)
+db.c_name.update({field_name: value}, {$rename:{"old_field_name": "new_field_name"}}) //to update field name
+
+DELETE
+
+db.c_name.remmove() //to remove all doc in c
+db.c_name.remove({field_name:value}) //to remove particular doc in c
+db.c_name.remove({field_name:value}, {justonce: true}) //particular single matched doc
